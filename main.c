@@ -26,17 +26,27 @@ int main() {
     printf("Input num2: ");
     scanf("%f", &num2);
 
-    float sum = add(num1, num2);
-    printf("%g + %g = %g\n", num1, num2, sum);
+    char operation;
+    printf("Input Operation: ");
+    scanf(" %c", &operation);
 
-    float dif = sub(num1, num2);
-    printf("%g - %g = %g\n", num1, num2, dif);
-
-    float pro = mul(num1, num2);
-    printf("%g * %g = %g\n", num1, num2, pro);
-
-    float quo = div(num1, num2);
-    printf("%g / %g = %g\n", num1, num2, quo);
+    switch (operation) {
+        case '+':
+            printf("%g + %g = %g\n", num1, num2, add(num1, num2));
+            break;
+        case '-':
+            printf("%g - %g = %g\n", num1, num2, sub(num1, num2));
+            break;
+        case '*':
+            printf("%g * %g = %g\n", num1, num2, mul(num1, num2));
+            break;
+        case '/':
+            printf("%g / %g = %g\n", num1, num2, div(num1, num2));
+            break;
+        default:
+            printf("Invalid Operation\n");
+            return 0;
+    }
 
     return 0;
 }
